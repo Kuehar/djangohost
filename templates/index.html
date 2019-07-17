@@ -2,18 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Index</title>
+    <title>くえはるブログ</title>
+	{% extends "base.html" %}
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/carousel.css' %}" />
 </head>
 <body>
-{% extends "base.html" %}
+
 {% block main_containts %}
-{% load static %}
+
+ <tr>
+      <th>記事名</th>
+      <th>公開日</th>
+      <th></th>
+    </tr>
+    {% for question in questions %}
+    <tr>
+      <td>{{ question.question_text }}</td>
+      <td>{{ question.pub_date }}</td>
+      <td><a href="{% url 'polls:detail' question.pk %}">詳細画面へ</a></td>
+    </tr>
+    {% endfor %}
 
 <main>
-    ここがindex.htmlです。
+
     {% block news %}
     {% endblock %}
 </main>
 {% endblock %}
+<footer>
+<nav>
+<ul>
+<li><a href="/Users/ken/djangohost/templates/index.html">ホーム</a></li>
+<li><a href="menu01.html">メニュー1</a></li>
+<li><a href="menu02.html">メニュー2</a></li>
+</ul>
+</nav>
+</footer>
 </body>
 </html>

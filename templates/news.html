@@ -1,26 +1,30 @@
+{% extends "index.html" %}
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>News</title>
+    <title>くえはるブログ</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
 </head>
 <body>
-
-
-{% extends "index.html" %}
 {% block news %}
+{% load static %}
+<link rel="shortcut icon" type="image/png" href="{% static 'superan.png'%}">
 
-      <p>ここがnews.htmlです。</p>
+      <p>記事内容</p>
         <table>
-            <tbody>
-          {% for context in news|slice:"3" %}
-                <tr>
-                    <td>{{ context.published_date }}</td>
-                    <td>{{ context.title }}</td>
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>
+            <body>
+
 {% endblock %}
+<footer>
+<nav>
+<ul>
+<li><a href="index.html">ホーム</a></li>
+<li><a href="menu01.html">メニュー1</a></li>
+<li><a href="menu02.html">メニュー2</a></li>
+</ul>
+</nav>
+</footer>
 </body>
 </html>
