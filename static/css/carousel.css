@@ -41,6 +41,7 @@ body {
 /* Center align the text within the three columns below the carousel */
 .marketing .col-lg-4 {
   margin-bottom: 1.5rem;
+  margin-top: 10rem;
   text-align: center;
 }
 .marketing h2 {
@@ -65,6 +66,7 @@ body {
   line-height: 1;
   letter-spacing: -.05rem;
 }
+
 
 
 /* RESPONSIVE CSS
