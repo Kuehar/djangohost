@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 's=*mdcif)os^r7i+4q3^#y^aettxk$fgpux=33ttw8pnnrrs$1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = Fasle
 
 ALLOWED_HOSTS = []
 
@@ -75,14 +75,24 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+#DATABASES = {
+ #   'default': {
+  #      'ENGINE': 'django.db.backends.mysql',
+   #     'NAME': 'mysql-django',
+    #    'USER': 'kuehar',
+     #   'PASSWORD': 'nikoniko1',
+      #  'HOST': 'localhost',
+       # 'PORT': '3306'
+    #}
+#}
+# 公式ドキュメントからのコピー
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'
-                             ),
-    }
-}
-
+       'default': {
+       'ENGINE': 'django.db.backends.mysql',
+       'HOST': '/cloudsql/<your-cloudsql-connection-string>',
+       'NAME': 'mysql-django',
+        'USER': 'Kuehar',
+       'PASSWORD': 'nikoniko1',}}
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
