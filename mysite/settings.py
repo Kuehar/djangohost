@@ -25,7 +25,7 @@ SECRET_KEY = 's=*mdcif)os^r7i+4q3^#y^aettxk$fgpux=33ttw8pnnrrs$1'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = [ 'my-portfolio-248305.appspot.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -56,7 +56,7 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': [os.path.join(BASE_DIR, 'templates'),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -86,16 +86,11 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
     #}
 #}
 
+# Install PyMySQL as mysqlclient/MySQLdb to use Django's mysqlclient adapter
+# See https://docs.djangoproject.com/en/2.1/ref/databases/#mysql-db-api-drivers
+# for more information
 import pymysql  # noqa: 402
 pymysql.install_as_MySQLdb()
-# 公式ドキュメントからのコピー
-DATABASES = {
-       'default': {
-       'ENGINE': 'django.db.backends.mysql',
-       'HOST': '/cloudsql/<your-cloudsql-connection-string>',
-       'NAME': 'mysql-django',
-        'USER': 'Kuehar',
-       'PASSWORD': 'nikoniko1',}}
 
 # [START db_setup]
 if os.getenv('GAE_APPLICATION', None):
@@ -104,29 +99,29 @@ if os.getenv('GAE_APPLICATION', None):
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
-            'HOST': '127.0.0.1',
+            'HOST': '/cloudsql/"kuehar-portolio:asia-northeast1:kuehar-portfolio',
             'USER': 'Kuehar',
             'PASSWORD': 'nikoniko1',
-            'NAME': 'mysql-django',
+            'NAME': 'kuehar-portfolio',
         }
     }
-else:
+#else:
     # Running locally so connect to either a local MySQL instance or connect to
     # Cloud SQL via the proxy. To start the proxy via command line:
     #
     #     $ cloud_sql_proxy -instances=[INSTANCE_CONNECTION_NAME]=tcp:3306
     #
     # See https://cloud.google.com/sql/docs/mysql-connect-proxy
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            'HOST': '127.0.0.1',
-            'PORT': '3306',
-            'NAME': 'mysql-django',
-            'USER': 'Kuehar',
-            'PASSWORD': 'nikoniko1',
-        }
-    }
+    #DATABASES = {
+     #   'default': {
+      #      'ENGINE': 'django.db.backends.mysql',
+       #     'HOST': 'localhost',
+        #    'PORT': '3306',
+         #   'NAME': 'kuehar-portfolio',
+          #  'USER': 'Kuehar',
+           # 'PASSWORD': 'nikoniko1',
+        #}
+    #}
 # [END db_setup]
 
 

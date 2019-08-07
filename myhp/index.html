@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>トップページ</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/carousel.css' %}" />
+    <link rel="shortcut icon" href="{% static 'images/superan.PNG' %}">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- ＃リンクのスムーズスクロール -->
+    <script>
+      $(function(){
+        // #で始まるリンクをクリックしたら実行されます
+        $('a[href^="#"]').click(function() {
+          // スクロールの速度
+          var speed = 700; // ミリ秒で記述
+          var href= $(this).attr("href");
+          var target = $(href == "#" || href == "" ? 'html' : href);
+          var position = target.offset().top;
+          $('body,html').animate({scrollTop:position}, speed, 'swing');
+          return false;
+        });
+      });
+    </script>
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#">くえはるのサイト</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+                <form class=form-inline mt-2 mt-md-0">
+                <a class="nav-link" href="#Introduction">自己紹介<span class="sr-only">(current)</span></a>
+                </form>
+                <form class="form-inline mt-2 mt-md-0">
+                    <a class="nav-link" href="#link">リンク</a>
+                </form>
+                <form class=form-inline mt-2 mt-md-0">
+                <a class="nav-link" href="#portfolio">ポートフォリオ<span class="sr-only">(current)</span></a>
+                </form>
+            </ul>
+        </div>
+    </nav>
+</header>
+<main role="main">
+<div id="Top" class="carousel slide" data-ride="carousel">
+
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img class="d-block w-100" src="{% static 'images/portfolio.png' %}">
+            <div class="container">
+                <div class="carousel-caption text-left">
+                </div>
+            </div>
+        </div>
+</div>
+
+
+        <div class="container marketing">
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+            <div class="row">
+                <div class="col-lg4" id="Introduction">
+                    <h1 class="featurette-heading">自己紹介</h1>
+                    <h2 class="featurette-heading">SIerで働いているくえはるといいます。</h2>
+                    <p class="lead">好きな言語はPythonとJavaScriptで、仕事ではJavaを書いています。<br>最近、DjangoとVue.jsを使ってWebアプリを作ったり、勉強会に参加したり、英語の勉強をしたりしています。</p>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+
+
+    <div class="container marketing">
+
+    <!-- Three columns of text below the carousel -->
+    <hr class="featurette-divider" id="link">
+    <div class="row" >
+        <div class="col-lg-3">
+            <a href="https://twitter.com/KueharX"><img class="bd-placeholder-img rounded-circle" width="130" height="130" img src ="{% static 'images/Twitter.png' %}"  preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em"></text></img>
+                <p>Twitter @KueharX</p></a>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-3">
+            <a href="https://github.com/Kuehar"><img class="bd-placeholder-img rounded-circle" width="130" height="130" img src ="{% static 'images/github.png' %}" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em"></text></img>
+                <p>GitHub @Kuehar</p></a>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-3">
+            <a href="https://qiita.com/KueharX"><img class="bd-placeholder-img rounded-circle" width="130" height="130" img src ="{% static 'images/Qiita.png' %}" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em"></text></img>
+                <p>Qiita @KueharX</p></a>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-3">
+            <a href="https://kueharx.hatenablog.com/"><img class="bd-placeholder-img rounded-circle" width="130" height="130" img src ="{% static 'images/hatena.jpg' %}" href=""preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em"></text></img>
+                <p>はてなブログ 寝る子は育つ</p></a>
+        </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+
+    <hr class="featurette-divider" id="portfolio">
+    <div class="container marketing">
+        <div class="row featurette">
+            <div class="col-md-7">
+                <h2 class="featurette-heading">テスト作成<span class="text-muted"></span></h2>
+                <p class="lead">Pythonを使ってテストを作成するプログラムを作りました。
+                    <br>現在はそれを使ったWebアプリを作っています。
+                    <br></class><a href="https://qiita.com/KueharX/items/046d941bf3cd3f7fa675">Qiita</a>に解説記事を書きました。
+                </p>
+            </div>
+            <div class="col-md-5 order-md-1">
+            <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" src="{% static 'images/python.png' %}" preserveAspectRatio="xMidYMid slice"><title>コード</title><rect fill="#eee" width="100%" height="100%"/><text fill="#aaa" dy=".3em" x="50%" y="50%"></text></img>
+        </div>
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+        <div class="col-md-7 order-md-2">
+            <h2 class="featurette-heading">競技プログラミング<span class="text-muted"></span></h2>
+            <p class="lead">アルゴリズムを勉強したいと思ったので始めました。<br>練習で解いた問題を<a href="https://github.com/Kuehar/Programming-Competition-Practice">GitHub</a>で管理しています。</p>
+        </div>
+        <div class="col-md-5 order-md-1">
+            <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" src="{% static 'images/code.jpg' %}" preserveAspectRatio="xMidYMid slice"><title>コード</title><rect fill="#eee" width="100%" height="100%"/><text fill="#aaa" dy=".3em" x="50%" y="50%"></text></img>
+        </div>
+    </div>
+    <hr class="featurette-divider">
+
+    <footer class="container">
+        <p class="float-right"><a href="index.html">Back to top</a></p>
+        <p>&copy; 2019 - Kuehar </p>
+    </footer>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script></body>
+</body>
+</html>

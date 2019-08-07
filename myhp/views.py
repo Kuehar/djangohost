@@ -5,11 +5,14 @@ from .models import Topic
 
 # Create your views here.
 def index(request):
-    template = loader.get_template('index.html')
-    context = {}
-    return HttpResponse(template.render(context,request))
+    template = loader.get_template('myhp/index.html')
+    #context = {}
+    return HttpResponse(template.render(request))
 
 def news(request):
     queryset = Topic.objects.all()
     context = { "news":queryset }
     return render(request, 'news.html', context)
+
+def hello_template(request):
+    return render(request, 'index.html')
